@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
-import json
 
 
 class Api(ABC):
+
     """Абстрактный класс для работы с API сервиса с вакансиями"""
 
     @abstractmethod
@@ -11,10 +11,11 @@ class Api(ABC):
 
 
 class AbstractJson(ABC):
+
     """Абстрактный класс для работы с json файлом"""
 
     @abstractmethod
-    def add_vacancy(self, *args):
+    def save_vacancies(self, *args):
         pass
 
     @abstractmethod
@@ -24,6 +25,3 @@ class AbstractJson(ABC):
     @abstractmethod
     def delete_vacancy(self):
         pass
-
-
-

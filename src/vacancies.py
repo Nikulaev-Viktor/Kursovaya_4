@@ -1,16 +1,21 @@
 class Vacancy:
 
     """Класс для работы с вакансиями"""
-    def __init__(self, name, salary, currency, url, requirement='Информация отсутствует'):
+    def __init__(self, name, salary, currency, url, responsibility, requirement='Информация отсутствует'):
         self.name = name
         self.salary = salary
         self.currency = currency
         self.url = url
+        self.responsibility = responsibility
         self.requirement = requirement
 
     def __repr__(self):
+
+        """Строковое представление объекта класса Vacancy"""
+
         return (f'Название вакансии: {self.name}\n'
                 f'Зарплата: {self.salary} {self.currency}\n'
+                f'Описание: {self.responsibility}\n'
                 f'Требования: {self.requirement}\n'
                 f'Ссылка на вакансию: <{self.url}>\n')
 
