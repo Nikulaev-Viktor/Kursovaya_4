@@ -6,10 +6,13 @@ class JsonSaver(AbstractJson):
 
     """Класс сохранения вакансий в файл"""
 
+    def __init__(self, file_path="vacancies.json"):
+        self.file_path = file_path
+
     def save_vacancies(self, vacancies):
 
         """Метод для записи списка вакансий в файл"""
-        with open("./data/vacancies.json", "w", encoding="utf8") as f:
+        with open(self.file_path, "w", encoding="utf8") as f:
             vacancies_json = json.dumps(vacancies, ensure_ascii=False)
             f.write(vacancies_json)
 
@@ -17,7 +20,7 @@ class JsonSaver(AbstractJson):
 
         """Метод получения данных из файла по указанным критериям"""
 
-        with open("./data/vacancies.json", "r", encoding="utf8") as f:
+        with open(self.file_path, "r", encoding="utf8") as f:
             vacancies = json.load(f)
             criterion_vac = []
             for vac in vacancies:
@@ -34,5 +37,5 @@ class JsonSaver(AbstractJson):
 
         list_vacancies_del = []
         list_ = json.dumps(list_vacancies_del, ensure_ascii=False)
-        with open("./data/vacancies.json", "w", encoding="utf8") as f:
+        with open(self.file_path, "w", encoding="utf8") as f:
             f.write(list_)

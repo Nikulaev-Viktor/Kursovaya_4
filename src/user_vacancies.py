@@ -54,6 +54,6 @@ def sorting(n):
         else:
             if vac["salary"] is None:
                 vac["salary"] = 0
-        sort_vac.append(Vacancy(vac['name'], vac['salary'], vac['currency'], vac['url'], vac["snippet"]['responsibility'], vac["snippet"]['requirement']))
+        sort_vac.append(Vacancy(vac['name'], vac['salary'], vac['url'], vac["snippet"]['responsibility'], vac["snippet"]['requirement']))
     print(sort_vac)
     return sort_vac
